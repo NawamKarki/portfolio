@@ -21,9 +21,10 @@ const text = {
   description:
     "Over the years I've worked with various techonoliges\n\nto create functional & beautiful applicaitons.\n\nAn innovator at heart, I am always interested in learning \n\nnew technologies and understanding how they can make our \n\nlives a little bit more easier.",
   current:
-    "Currently I am learning Solidity and Brownie JS.\n\n\nLet's get in touch if you'd like to jam. :)",
+    "Currently I am learning Solidity and Brownie JS.\n\n\nLet's get in touch if you'd like to jam. ☺️",
   stack: "My Arsenal",
   music: "Besides coding & desiging, I make music.\n\nCheck my music here",
+  works: "Some of my works",
 };
 
 const i = 1;
@@ -45,7 +46,34 @@ export default function Placeholder() {
         <Caption text={text.stack} position={[-2.5, -0.5, 0]} size="90" />
         <Caption text={text.music} position={[1.5, -0.58, 0]} size="100" />
         <SkillsContainer />
-        <Button position={[1, 1, 1]} text="Code" />
+
+        <mesh position={[1, 0.5, 1]}>
+          <Caption text={text.works} position={[0.07, 0.2, 0]} size="100" />
+          <Button
+            small={false}
+            position={[0, 0, 0]}
+            text="ZeFi"
+            url="https://zefi.com/en"
+          />
+          <Button
+            small={false}
+            position={[0.4, 0, 0]}
+            text="Soul Æther"
+            url="https://zefi.com/en"
+          />
+          <Button
+            small={false}
+            position={[0.8, 0, 0]}
+            text="PopC Trivia"
+            url="https://popc-trivia.web.app/"
+          />
+          <Button
+            small={false}
+            position={[0, -0.2, 0]}
+            text="Pepper Robot"
+            url="https://www.youtube.com/watch?v=aE3fGLqIyG8"
+          />
+        </mesh>
         <Button
           small={false}
           position={[1.1, -0.8, 1]}
@@ -54,7 +82,7 @@ export default function Placeholder() {
         />
         <Button
           small={false}
-          position={[1.7, -0.8, 1]}
+          position={[1.5, -0.8, 1]}
           text="Youtube"
           url="https://www.youtube.com/watch?v=Dgum2qlS5AA&list=PLxnTaYqyJNAZOYj7nNOWRoLiFPZsm-ctE&index=1"
         />
@@ -120,7 +148,7 @@ function Bg() {
         <Depth
           colorB="red"
           colorA="skyblue"
-          alpha={1}
+          alpha={1.2}
           mode="normal"
           near={130}
           far={200}

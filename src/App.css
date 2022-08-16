@@ -1,0 +1,39 @@
+@import "./fonts.scss";
+@import url("https://rsms.me/inter/inter.css");
+
+.App {
+  text-align: center;
+  height: 100vh;
+  color: wheat;
+  position: relative;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+}
+
+.canvas {
+  z-index: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+.content {
+  width: 270px;
+  height: 270px;
+  background: #f0f0f0;
+  border-radius: 3px;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.wrapper {
+  padding: 10px;
+  width: 537px;
+  height: 442px;
+  transform: scale(0.5);
+  transform-origin: top left;
+}

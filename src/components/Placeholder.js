@@ -1,0 +1,236 @@
+import * as THREE from "three";
+import { Suspense, useEffect, useRef, useState } from "react";
+import { Canvas, useThree, useFrame } from "@react-three/fiber";
+import {
+  Text,
+  Html,
+  CycleRaycast,
+  BakeShadows,
+  useCursor,
+  softShadows,
+} from "@react-three/drei";
+import { LayerMaterial, Depth, Noise } from "lamina";
+import Noodles from "./Noodles";
+import Button from "./Button";
+import Preloader from "./Preloader";
+import Icon from "./Icon";
+
+const text = {
+  intro: "Hi,\n\nI am Nawam Karki",
+  title: "Full Stack Engineer, Designer, Musician and an Awesome Human",
+  description:
+    "Over the years I've worked with various techonoliges\n\nto create functional & beautiful applicaitons.\n\nAn innovator at heart, I am always interested in learning \n\nnew technologies and understanding how they can make our \n\nlives a little bit more easier.",
+  current:
+    "Currently I am learning Solidity and Brownie JS.\n\n\nLet's get in touch if you'd like to jam. :)",
+  stack: "My Arsenal",
+  music: "Besides coding & desiging, I make music.\n\nCheck my music here",
+};
+
+const i = 1;
+
+export default function Placeholder() {
+  return (
+    <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 10], fov: 22 }}>
+      <Bg />
+      <Suspense fallback={<Preloader />}>
+        <Stage />
+        <Noodles />
+        {/* <Html>Test to see what happends</Html> */}
+        {/* <Caption>{`Hello\n\nI am Nawam Karki\n\na Full Stack Engineer`}</Caption> */}
+        <Caption text={text.intro} position={[-2, 1.5, 0]} size="80" />
+        <Caption text={text.title} position={[-1.32, 1.2, 0]} size="100" />
+        <Caption text={text.description} position={[-1, 0.7, 0]} size="90" />
+        <Caption text={text.current} position={[-1.22, 0.1, 0]} size="90" />
+
+        <Caption text={text.stack} position={[-2.5, -0.5, 0]} size="90" />
+        <Caption text={text.music} position={[1.5, -0.58, 0]} size="100" />
+        <SkillsContainer />
+        <Button position={[1, 1, 1]} text="Code" />
+        <Button
+          small={false}
+          position={[1.1, -0.8, 1]}
+          text="Spotify"
+          url="https://open.spotify.com/artist/6W98BrJeO1kPAcWhn4qQdi"
+        />
+        <Button
+          small={false}
+          position={[1.7, -0.8, 1]}
+          text="Youtube"
+          url="https://www.youtube.com/watch?v=Dgum2qlS5AA&list=PLxnTaYqyJNAZOYj7nNOWRoLiFPZsm-ctE&index=1"
+        />
+        <mesh position={[0, -1.7, 0]}>
+          <Caption text="Let's Connect" size="100" />
+          <Button
+            small={false}
+            position={[-0.4, 0, 1]}
+            text="LinkedIn"
+            url="https://www.linkedin.com/in/nawamkarki/"
+          />
+          <Button
+            small={false}
+            position={[0, 0, 1]}
+            text="GitHub"
+            url="https://github.com/nawam-karki"
+          />
+          <Button
+            small={false}
+            position={[0.4, 0, 1]}
+            text="Instagram"
+            url="https://www.instagram.com/nawam.mawan/"
+          />
+        </mesh>
+        <Rig />
+      </Suspense>
+    </Canvas>
+  );
+}
+
+function Caption({ text, position, size }) {
+  const { width } = useThree((state) => state.viewport);
+  return (
+    <Text
+      position={position}
+      lineHeight={0.8}
+      color="white"
+      font="/Gajkley.otf"
+      fontSize={width / size}
+      material-toneMapped={false}
+      anchorX="center"
+      anchorY="middle"
+    >
+      {text}
+    </Text>
+  );
+}
+
+function Rig({ v = new THREE.Vector3() }) {
+  return useFrame((state) => {
+    state.camera.position.lerp(
+      v.set(state.mouse.x / 2, state.mouse.y / 2, 10),
+      0.05
+    );
+  });
+}
+
+function Bg() {
+  return (
+    <mesh scale={100}>
+      <boxGeometry args={[1, 1, 1]} />
+      <LayerMaterial side={THREE.BackSide}>
+        <Depth
+          colorB="red"
+          colorA="skyblue"
+          alpha={1}
+          mode="normal"
+          near={130}
+          far={200}
+          origin={[100, 100, -100]}
+        />
+        <Noise
+          mapping="local"
+          type="white"
+          scale={1000}
+          colorA="white"
+          colorB="black"
+          mode="subtract"
+          alpha={0.2}
+        />
+      </LayerMaterial>
+    </mesh>
+  );
+}
+
+function Skill({ children, position }) {
+  const color = new THREE.Color();
+  const { width } = useThree((state) => state.viewport);
+
+  const fontProps = {
+    font: "/Ki-Medium.ttf",
+    fontSize: width / 130,
+    letterSpacing: -0.05,
+    lineHeight: 1,
+    "material-toneMapped": false,
+  };
+  const ref = useRef();
+  const [hovered, setHovered] = useState(false);
+  const over = (e) => (e.stopPropagation(), setHovered(true));
+  const out = () => setHovered(false);
+  // Change the mouse cursor on hover
+  useEffect(() => {
+    if (hovered) document.body.style.cursor = "pointer";
+    return () => (document.body.style.cursor = "auto");
+  }, [hovered]);
+  // Tie component to the render-loop
+  // useFrame(({ camera }) => {
+  //   // Make text face the camera
+  //   ref.current.quaternion.copy(camera.quaternion);
+  //   // Animate font color
+  //   ref.current.material.color.lerp(
+  //     color.set(hovered ? "#fa2720" : "white"),
+  //     0.1
+  //   );
+  // });
+  return (
+    <Text
+      position={position}
+      ref={ref}
+      color="white"
+      // onPointerOver={over}
+      // onPointerOut={out}
+      {...fontProps}
+      children={children}
+    />
+  );
+}
+
+function SkillsContainer(position) {
+  return (
+    <mesh position={[-2.42, -0.55, 1]}>
+      <Skill children="HTML5 | CSS3 | Bootstrap" position={[0.5, 0, 1]} />
+      <Skill
+        children="Javascript | jQuery | React JS | Vue JS | Three JS"
+        position={[0.95, -0.1, 1]}
+      />
+      <Skill children="Nodejs | Python" position={[0.36, -0.2, 1]} />
+      <Skill
+        children="Severless - Google Cloud Platform"
+        position={[0.7, -0.3, 1]}
+      />
+      <Skill children="Postman | Github | GitLab" position={[0.52, -0.4, 1]} />
+      <Skill children="Webflow | Wordpress" position={[0.5, -0.5, 1]} />
+    </mesh>
+  );
+}
+
+function Stage() {
+  return (
+    <>
+      {/* Fill */}
+      <ambientLight intensity={0.5} />
+      {/* Main */}
+      <directionalLight
+        position={[1, 10, -2]}
+        intensity={1}
+        shadow-camera-far={70}
+        shadow-camera-left={-10}
+        shadow-camera-right={10}
+        shadow-camera-top={10}
+        shadow-camera-bottom={-10}
+        shadow-mapSize={[512, 512]}
+        castShadow
+      />
+      {/* Strip */}
+      <directionalLight position={[-10, -10, 2]} intensity={3} />
+      {/* Ground */}
+      {/* <mesh receiveShadow rotation-x={-Math.PI / 2} position={[0, -0.75, 0]}>
+        <planeGeometry args={[20, 20]} />
+        <shadowMaterial opacity={0.2} />
+      </mesh> */}
+      {/* This freezes the shadow map, which is fast, but the model has to be static  */}
+      <BakeShadows />
+    </>
+  );
+}
+
+// Percentage closer soft shadows, normally *very* expensive
+softShadows();

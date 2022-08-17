@@ -96,12 +96,14 @@ export default function Placeholder() {
           small={false}
           position={[1.1, -0.8, 1]}
           text="Spotify"
+          type="Spotify"
           url="https://open.spotify.com/artist/6W98BrJeO1kPAcWhn4qQdi"
         />
         <Button
           small={false}
           position={[1.5, -0.8, 1]}
           text="Youtube"
+          type="Youtube"
           url="https://www.youtube.com/watch?v=Dgum2qlS5AA&list=PLxnTaYqyJNAZOYj7nNOWRoLiFPZsm-ctE&index=1"
         />
         <mesh position={[0, -1.7, 0]}>
@@ -110,18 +112,21 @@ export default function Placeholder() {
             small={false}
             position={[-0.4, 0, 1]}
             text="LinkedIn"
+            type="LinkedIn"
             url="https://www.linkedin.com/in/nawamkarki/"
           />
           <Button
             small={false}
             position={[0, 0, 1]}
             text="GitHub"
+            type="GitHub"
             url="https://github.com/nawam-karki"
           />
           <Button
             small={false}
             position={[0.4, 0, 1]}
             text="Instagram"
+            type="Instagram"
             url="https://www.instagram.com/nawam.mawan/"
           />
         </mesh>

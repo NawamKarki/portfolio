@@ -52,6 +52,7 @@ const material = new LayerMaterial({
 
 function Noodle() {
   const { viewport, camera } = useThree();
+  const [hovered, setHovered] = useState(false);
   const { nodes } = useGLTF("/worms-transformed.glb");
   const [geometry] = useState(
     () => nodes[`noodle_${Math.ceil(Math.random() * 4)}`].geometry
@@ -70,17 +71,23 @@ function Noodle() {
     <Float
       position={position}
       speed={speed}
-      rotationIntensity={10}
+      rotationIntensity={100}
       floatIntensity={40}
       dispose={null}
     >
-      <mesh scale={3} geometry={geometry} material={material} />
+      <mesh
+        scale={0.5}
+        geometry={geometry}
+        material={hovered ? fresnel : material}
+        onPointerOver={(e) => (e.stopPropagation(), setHovered(true))}
+        onPointerOut={(e) => setHovered(false)}
+      />
     </Float>
   );
 }
 
 export default function Noodles() {
-  return Array.from({ length: 25 }, (_, i) => <Noodle key={i} />);
+  return Array.from({ length: 150 }, (_, i) => <Noodle key={i} />);
 }
 
 useGLTF.preload("/worm-transformed.glb");

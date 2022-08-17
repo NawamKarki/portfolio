@@ -9,7 +9,7 @@ import {
   useCursor,
   softShadows,
 } from "@react-three/drei";
-import { LayerMaterial, Depth, Noise } from "lamina";
+import { LayerMaterial, Depth, Noise, DebugLayerMaterial } from "lamina";
 import Noodles from "./Noodles";
 import Button from "./Button";
 import Preloader from "./Preloader";
@@ -38,7 +38,7 @@ export default function Placeholder() {
         <Noodles />
         {/* <Html>Test to see what happends</Html> */}
         {/* <Caption>{`Hello\n\nI am Nawam Karki\n\na Full Stack Engineer`}</Caption> */}
-        <Caption text={text.intro} position={[-2, 1.5, 0]} size="80" />
+        <Caption text={text.intro} position={[-2, 1.5, 0]} size="60" />
         <Caption text={text.title} position={[-1.32, 1.2, 0]} size="100" />
         <Caption text={text.description} position={[-1, 0.7, 0]} size="90" />
         <Caption text={text.current} position={[-1.22, 0.1, 0]} size="90" />
@@ -53,25 +53,43 @@ export default function Placeholder() {
             small={false}
             position={[0, 0, 0]}
             text="ZeFi"
+            type="Full Stack"
             url="https://zefi.com/en"
           />
           <Button
             small={false}
             position={[0.4, 0, 0]}
             text="Soul Æther"
+            type="WebGL"
             url="https://zefi.com/en"
           />
           <Button
             small={false}
             position={[0.8, 0, 0]}
             text="PopC Trivia"
+            type="Full Stack"
             url="https://popc-trivia.web.app/"
           />
           <Button
             small={false}
             position={[0, -0.2, 0]}
             text="Pepper Robot"
+            type="Robotics"
             url="https://www.youtube.com/watch?v=aE3fGLqIyG8"
+          />
+          <Button
+            small={false}
+            position={[0.4, -0.2, 0]}
+            text="Pixel Awards"
+            type="Frontend"
+            url="https://www.pixelawards.nz"
+          />
+          <Button
+            small={false}
+            position={[0.8, -0.2, 0]}
+            text="VESPHA"
+            type="Virtaul Reality"
+            url="https://youtu.be/cIjqZWCwfZg"
           />
         </mesh>
         <Button
@@ -157,11 +175,11 @@ function Bg() {
         <Noise
           mapping="local"
           type="white"
-          scale={1000}
+          scale={100}
           colorA="white"
           colorB="black"
           mode="subtract"
-          alpha={0.2}
+          alpha={0.8}
         />
       </LayerMaterial>
     </mesh>

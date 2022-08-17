@@ -11,7 +11,7 @@ import {
 
 //const url = "https://www.youtube.com/";
 
-export default function Button({ position, text, url, small = true }) {
+export default function Button({ position, text, type, url, small = true }) {
   const i = 1;
   const { width } = useThree((state) => state.viewport);
   const ref = useRef();
@@ -67,7 +67,7 @@ export default function Button({ position, text, url, small = true }) {
           anchorX="center"
           anchorY="middle"
         >
-          {text}
+          {hovered ? type : text}
         </Text>
       </RoundedBox>
     </mesh>

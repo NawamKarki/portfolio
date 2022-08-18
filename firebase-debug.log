@@ -1,0 +1,103 @@
+[debug] [2022-08-18T23:46:49.561Z] ----------------------------------------------------------------------
+[debug] [2022-08-18T23:46:49.562Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2022-08-18T23:46:49.562Z] CLI Version:   10.0.1
+[debug] [2022-08-18T23:46:49.562Z] Platform:      darwin
+[debug] [2022-08-18T23:46:49.563Z] Node Version:  v16.13.1
+[debug] [2022-08-18T23:46:49.563Z] Time:          Fri Aug 19 2022 11:46:49 GMT+1200 (New Zealand Standard Time)
+[debug] [2022-08-18T23:46:49.563Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-08-18T23:46:49.588Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-08-18T23:46:49.588Z] > authorizing via signed-in user (nawam.mawan@gmail.com)
+[debug] [2022-08-18T23:46:49.588Z] [iam] checking project nawamkarki for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-08-18T23:46:49.589Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-08-18T23:46:49.589Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-08-18T23:46:49.965Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Thu, 18 Aug 2022 23:46:50 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-08-18T23:46:50.012Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/nawamkarki:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-08-18T23:46:50.422Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 18 Aug 2022 23:46:50 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=175","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-08-18T23:46:50.423Z] > refreshing access token with scopes: []
+[debug] [2022-08-18T23:46:50.423Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-08-18T23:46:50.753Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Thu, 18 Aug 2022 23:46:50 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-08-18T23:46:50.792Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nawamkarki [none]
+[debug] [2022-08-18T23:46:51.422Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nawamkarki 200
+[debug] [2022-08-18T23:46:51.422Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nawamkarki {"projectId":"nawamkarki","projectNumber":"342935167058","displayName":"nawamkarki","name":"projects/nawamkarki","resources":{"hostingSite":"nawamkarki"},"state":"ACTIVE","etag":"1_8d395618-7798-4f18-aca5-c6df35312951"}
+[info] 
+[info] === Deploying to 'nawamkarki'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-08-18T23:46:51.426Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-08-18T23:46:51.426Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-08-18T23:46:51.757Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Thu, 18 Aug 2022 23:46:51 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-08-18T23:46:51.804Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/nawamkarki/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-08-18T23:46:53.780Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 18 Aug 2022 23:46:53 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[nawamkarki]: beginning deploy... 
+[info] i  hosting[nawamkarki]: found 22 files in build 
+[debug] [2022-08-18T23:46:54.261Z] > refreshing access token with scopes: []
+[debug] [2022-08-18T23:46:54.262Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-08-18T23:46:54.264Z] [hosting] hash cache [YnVpbGQ] stored for 22 files
+[debug] [2022-08-18T23:46:54.264Z] [hosting][hash queue][FINAL] {"max":451,"min":12,"avg":42.36363636363637,"active":0,"complete":22,"success":22,"errored":0,"retried":0,"total":22,"elapsed":460}
+[debug] [2022-08-18T23:46:54.596Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Thu, 18 Aug 2022 23:46:54 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-08-18T23:46:54.645Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/sites/nawamkarki/versions/ed1802430e2bffd6:populateFiles [none]
+[debug] [2022-08-18T23:46:54.645Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/nawamkarki/versions/ed1802430e2bffd6:populateFiles {"files":{"/404.html":"05cbc6f94d7a69ce2e29646eab13be2c884e61ba93e3094df5028866876d18b3","/asset-manifest.json":"55259ef68891951b7d92acfecb717b3d6cf794416935d91a2b68afd375389986","/index.html":"5dbabeb26f638b55c018817a645f76628136720ba8c0e1ca4fd185ada452154a","/icon.svg":"2e7dd8e9dc06050d92e2306b1231dbbc886f6a7cf41d9421d0ea3dd210b6777c","/manifest.json":"e2b4ad333017cdcdc68ea79b10b917e942dedf71fa80a26361bd448c2e543bf7","/robots.txt":"391d14b3c2f8c9143a27a28c7399585142228d4d1bdbe2c87ac946de411fa9a2","/tools.gltf":"68647e116467bfc4b8ba6c6afcde9deeaeec1be25cce0ddf1e327be89360ee16","/static/css/main.3728fee4.css":"eb0ff5174127190832c00fcab111c7aea42a0c3a059a172dbaeae1be66cc4b08","/static/css/main.3728fee4.css.map":"32acedb2c007119a77012a2fa537062621ee4c8cc479d044dccdfe5d68c30d6e","/static/js/787.19a5d10a.chunk.js":"7d4e2da4f73c55e950aa19bfec5d469324c1d4ae4b395e4985cbc793a611284e","/Gajkley.otf":"698e351f2ffd2420e099c3e43c7109927f130b804224213a6c8b70e7ec38a480","/static/js/main.8324adfb.js.LICENSE.txt":"5f34de7f39fa2e09532523626fe106a0b091617b9e896228e755e44675407219","/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg":"5f6ecf30024a00eebae8bb333ddc0f1c3d19fd8e7e6838404547f41abb63a8e8","/static/js/787.19a5d10a.chunk.js.map":"a5bcb7033f535e0f42c12c8a516b8382ac9946334f8b976cef2db41a4ad4d616","/Ki-Medium.ttf":"93b1c4262fcf04ad465d048f8133b8d1719172c690d89302e1074e2e508c9f5d","/static/media/Ki-Medium.fc4e9b4f8ec6e119c108.ttf":"93b1c4262fcf04ad465d048f8133b8d1719172c690d89302e1074e2e508c9f5d","/worms-transformed.glb":"430e57d4fa6e7430376562a2f5a3fc6c88632da9abe09996774941d65c8bfee0","/mac-draco.glb":"15526e72ea6ac96959dfc2f2ef05b1f5c1d8a95dc1c40b2f7075c2555d3f2219","/resume.jpg":"7ce7e41489656ed289b7b206098ef11bde5355749de2d64d6679a291aabd0232","/static/js/main.8324adfb.js":"bbd0f4b8eb7145f06b43c18961dce500b30b68f5bc242a3b03f7065bfd03cb23","/resume.png":"ff06c6428a1b13c1e668f022b6c1929886609dfdcacd082713f55213eb6082ce","/static/js/main.8324adfb.js.map":"713105594368467943edfcdc46e0e2c0fc36a43e57df92c9ff207637bbaa4c25"}}
+[debug] [2022-08-18T23:46:56.331Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/sites/nawamkarki/versions/ed1802430e2bffd6:populateFiles 200
+[debug] [2022-08-18T23:46:56.331Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/nawamkarki/versions/ed1802430e2bffd6:populateFiles {"uploadRequiredHashes":["5dbabeb26f638b55c018817a645f76628136720ba8c0e1ca4fd185ada452154a","55259ef68891951b7d92acfecb717b3d6cf794416935d91a2b68afd375389986","713105594368467943edfcdc46e0e2c0fc36a43e57df92c9ff207637bbaa4c25","bbd0f4b8eb7145f06b43c18961dce500b30b68f5bc242a3b03f7065bfd03cb23"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/nawamkarki/versions/ed1802430e2bffd6/files"}
+[debug] [2022-08-18T23:46:56.333Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nawamkarki/versions/ed1802430e2bffd6/files/5dbabeb26f638b55c018817a645f76628136720ba8c0e1ca4fd185ada452154a [none]
+[debug] [2022-08-18T23:46:56.333Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nawamkarki/versions/ed1802430e2bffd6/files/5dbabeb26f638b55c018817a645f76628136720ba8c0e1ca4fd185ada452154a [stream]
+[debug] [2022-08-18T23:46:56.335Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nawamkarki/versions/ed1802430e2bffd6/files/55259ef68891951b7d92acfecb717b3d6cf794416935d91a2b68afd375389986 [none]
+[debug] [2022-08-18T23:46:56.335Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nawamkarki/versions/ed1802430e2bffd6/files/55259ef68891951b7d92acfecb717b3d6cf794416935d91a2b68afd375389986 [stream]
+[debug] [2022-08-18T23:46:56.337Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nawamkarki/versions/ed1802430e2bffd6/files/713105594368467943edfcdc46e0e2c0fc36a43e57df92c9ff207637bbaa4c25 [none]
+[debug] [2022-08-18T23:46:56.337Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nawamkarki/versions/ed1802430e2bffd6/files/713105594368467943edfcdc46e0e2c0fc36a43e57df92c9ff207637bbaa4c25 [stream]
+[debug] [2022-08-18T23:46:56.339Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/nawamkarki/versions/ed1802430e2bffd6/files/bbd0f4b8eb7145f06b43c18961dce500b30b68f5bc242a3b03f7065bfd03cb23 [none]
+[debug] [2022-08-18T23:46:56.340Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nawamkarki/versions/ed1802430e2bffd6/files/bbd0f4b8eb7145f06b43c18961dce500b30b68f5bc242a3b03f7065bfd03cb23 [stream]
+[debug] [2022-08-18T23:46:56.343Z] [hosting][populate queue][FINAL] {"max":2072,"min":2072,"avg":2072,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":2081}
+[debug] [2022-08-18T23:46:56.343Z] [hosting] uploads queued: 4
+[debug] [2022-08-18T23:46:58.266Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nawamkarki/versions/ed1802430e2bffd6/files/55259ef68891951b7d92acfecb717b3d6cf794416935d91a2b68afd375389986 200
+[debug] [2022-08-18T23:46:58.267Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nawamkarki/versions/ed1802430e2bffd6/files/55259ef68891951b7d92acfecb717b3d6cf794416935d91a2b68afd375389986 [stream]
+[debug] [2022-08-18T23:46:58.279Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nawamkarki/versions/ed1802430e2bffd6/files/5dbabeb26f638b55c018817a645f76628136720ba8c0e1ca4fd185ada452154a 200
+[debug] [2022-08-18T23:46:58.279Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nawamkarki/versions/ed1802430e2bffd6/files/5dbabeb26f638b55c018817a645f76628136720ba8c0e1ca4fd185ada452154a [stream]
+[debug] [2022-08-18T23:46:58.576Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nawamkarki/versions/ed1802430e2bffd6/files/bbd0f4b8eb7145f06b43c18961dce500b30b68f5bc242a3b03f7065bfd03cb23 200
+[debug] [2022-08-18T23:46:58.577Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nawamkarki/versions/ed1802430e2bffd6/files/bbd0f4b8eb7145f06b43c18961dce500b30b68f5bc242a3b03f7065bfd03cb23 [stream]
+[debug] [2022-08-18T23:46:58.918Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/nawamkarki/versions/ed1802430e2bffd6/files/713105594368467943edfcdc46e0e2c0fc36a43e57df92c9ff207637bbaa4c25 200
+[debug] [2022-08-18T23:46:58.918Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/nawamkarki/versions/ed1802430e2bffd6/files/713105594368467943edfcdc46e0e2c0fc36a43e57df92c9ff207637bbaa4c25 [stream]
+[debug] [2022-08-18T23:46:58.918Z] [hosting][upload queue][FINAL] {"max":2586,"min":1935,"avg":2178.75,"active":0,"complete":4,"success":4,"errored":0,"retried":0,"total":4,"elapsed":2587}
+[info] ✔  hosting[nawamkarki]: file upload complete 
+[debug] [2022-08-18T23:46:58.920Z] [hosting] deploy completed after 5138ms
+[debug] [2022-08-18T23:46:58.925Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "nawamkarki"
+    },
+    "site": "nawamkarki",
+    "version": "sites/nawamkarki/versions/ed1802430e2bffd6"
+  }
+]
+[info] i  hosting[nawamkarki]: finalizing version... 
+[debug] [2022-08-18T23:46:58.927Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-08-18T23:46:58.927Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-08-18T23:46:59.312Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Thu, 18 Aug 2022 23:46:59 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-08-18T23:46:59.362Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/nawamkarki/versions/ed1802430e2bffd6?updateMask=status  
+ {"status":"FINALIZED"}
+[debug] [2022-08-18T23:47:00.950Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 18 Aug 2022 23:47:01 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-08-18T23:47:00.951Z] [hosting] finalized version for nawamkarki: {"name":"sites/nawamkarki/versions/ed1802430e2bffd6","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2022-08-18T23:46:53.301376Z","createUser":{"email":"nawam.mawan@gmail.com"},"finalizeTime":"2022-08-18T23:47:00.886875Z","finalizeUser":{"email":"nawam.mawan@gmail.com"}}
+[info] ✔  hosting[nawamkarki]: version finalized 
+[info] i  hosting[nawamkarki]: releasing new version... 
+[debug] [2022-08-18T23:47:00.952Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/nawamkarki/releases?version_name=sites/nawamkarki/versions/ed1802430e2bffd6  
+ {"message":null}

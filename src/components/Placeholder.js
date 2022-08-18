@@ -30,6 +30,8 @@ const text = {
 const i = 1;
 
 export default function Placeholder() {
+  const [enter, setEnter] = useState(false);
+
   return (
     <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 10], fov: 22 }}>
       <Bg />
@@ -37,61 +39,62 @@ export default function Placeholder() {
         <Stage />
         <Noodles />
 
-        <Caption text={text.intro} position={[-2, 1.5, 0]} size="60" />
-        <Caption text={text.title} position={[-1.32, 1.2, 0]} size="100" />
-        <Caption text={text.description} position={[-1, 0.7, 0]} size="90" />
-        <Caption text={text.current} position={[-1.22, 0.1, 0]} size="90" />
+        <mesh>
+          <Caption text={text.intro} position={[-2, 1.5, 0]} size="60" />
+          <Caption text={text.title} position={[-1.32, 1.2, 0]} size="100" />
+          <Caption text={text.description} position={[-1, 0.7, 0]} size="90" />
+          <Caption text={text.current} position={[-1.22, 0.1, 0]} size="90" />
 
-        <Caption text={text.stack} position={[-2.5, -0.5, 0]} size="90" />
-        <Caption text={text.music} position={[1.5, -0.58, 0]} size="100" />
-        <SkillsContainer />
+          <Caption text={text.stack} position={[-2.5, -0.5, 0]} size="90" />
+          <Caption text={text.music} position={[1.5, -0.58, 0]} size="100" />
+          <SkillsContainer />
 
-        <mesh position={[1, 0.5, 1]}>
-          <Caption text={text.works} position={[0.07, 0.2, 0]} size="100" />
-          <Button
-            small={false}
-            position={[0, 0, 0]}
-            text="ZeFi"
-            type="Full Stack"
-            url="https://zefi.com/en"
-          />
-          <Button
-            small={false}
-            position={[0.4, 0, 0]}
-            text="Soul Æther"
-            type="WebGL"
-            url="https://zefi.com/en"
-          />
-          <Button
-            small={false}
-            position={[0.8, 0, 0]}
-            text="PopC Trivia"
-            type="Full Stack"
-            url="https://popc-trivia.web.app/"
-          />
-          <Button
-            small={false}
-            position={[0, -0.2, 0]}
-            text="Pepper Robot"
-            type="Robotics"
-            url="https://www.youtube.com/watch?v=aE3fGLqIyG8"
-          />
-          <Button
-            small={false}
-            position={[0.4, -0.2, 0]}
-            text="Pixel Awards"
-            type="Frontend"
-            url="https://www.pixelawards.nz"
-          />
-          <Button
-            small={false}
-            position={[0.8, -0.2, 0]}
-            text="VESPHA"
-            type="Virtaul Reality"
-            url="https://youtu.be/cIjqZWCwfZg"
-          />
-        </mesh>
-        {/* {showPopup ? (
+          <mesh position={[1, 0.5, 1]}>
+            <Caption text={text.works} position={[0.07, 0.2, 0]} size="100" />
+            <Button
+              small={false}
+              position={[0, 0, 0]}
+              text="ZeFi"
+              type="Full Stack"
+              url="https://zefi.com/en"
+            />
+            <Button
+              small={false}
+              position={[0.4, 0, 0]}
+              text="Soul Æther"
+              type="WebGL"
+              url="https://zefi.com/en"
+            />
+            <Button
+              small={false}
+              position={[0.8, 0, 0]}
+              text="PopC Trivia"
+              type="Full Stack"
+              url="https://popc-trivia.web.app/"
+            />
+            <Button
+              small={false}
+              position={[0, -0.2, 0]}
+              text="Pepper Robot"
+              type="Robotics"
+              url="https://www.youtube.com/watch?v=aE3fGLqIyG8"
+            />
+            <Button
+              small={false}
+              position={[0.4, -0.2, 0]}
+              text="Pixel Awards"
+              type="Frontend"
+              url="https://www.pixelawards.nz"
+            />
+            <Button
+              small={false}
+              position={[0.8, -0.2, 0]}
+              text="VESPHA"
+              type="Virtaul Reality"
+              url="https://youtu.be/cIjqZWCwfZg"
+            />
+          </mesh>
+          {/* {showPopup ? (
           <mesh position={[1, 1.5, 0]}>
             <Html className="germs">
               <p>Hover over the germs and sanitise my screen!!!!</p>
@@ -100,43 +103,44 @@ export default function Placeholder() {
         ) : (
           ""
         )} */}
-        <Button
-          small={false}
-          position={[1.1, -0.8, 1]}
-          text="Spotify"
-          type="Spotify"
-          url="https://open.spotify.com/artist/6W98BrJeO1kPAcWhn4qQdi"
-        />
-        <Button
-          small={false}
-          position={[1.5, -0.8, 1]}
-          text="Youtube"
-          type="Youtube"
-          url="https://www.youtube.com/watch?v=Dgum2qlS5AA&list=PLxnTaYqyJNAZOYj7nNOWRoLiFPZsm-ctE&index=1"
-        />
-        <mesh position={[0, -1.7, 0]}>
-          <Caption text="Let's Connect" size="100" />
           <Button
             small={false}
-            position={[-0.4, 0, 1]}
-            text="LinkedIn"
-            type="LinkedIn"
-            url="https://www.linkedin.com/in/nawamkarki/"
+            position={[1.1, -0.8, 1]}
+            text="Spotify"
+            type="Spotify"
+            url="https://open.spotify.com/artist/6W98BrJeO1kPAcWhn4qQdi"
           />
           <Button
             small={false}
-            position={[0, 0, 1]}
-            text="GitHub"
-            type="GitHub"
-            url="https://github.com/nawam-karki"
+            position={[1.5, -0.8, 1]}
+            text="Youtube"
+            type="Youtube"
+            url="https://www.youtube.com/watch?v=Dgum2qlS5AA&list=PLxnTaYqyJNAZOYj7nNOWRoLiFPZsm-ctE&index=1"
           />
-          <Button
-            small={false}
-            position={[0.4, 0, 1]}
-            text="Instagram"
-            type="Instagram"
-            url="https://www.instagram.com/nawam.mawan/"
-          />
+          <mesh position={[0, -1.7, 0]}>
+            <Caption text="Let's Connect" size="100" />
+            <Button
+              small={false}
+              position={[-0.4, 0, 1]}
+              text="LinkedIn"
+              type="LinkedIn"
+              url="https://www.linkedin.com/in/nawamkarki/"
+            />
+            <Button
+              small={false}
+              position={[0, 0, 1]}
+              text="GitHub"
+              type="GitHub"
+              url="https://github.com/nawam-karki"
+            />
+            <Button
+              small={false}
+              position={[0.4, 0, 1]}
+              text="Instagram"
+              type="Instagram"
+              url="https://www.instagram.com/nawam.mawan/"
+            />
+          </mesh>
         </mesh>
         <Rig />
       </Suspense>
@@ -250,6 +254,7 @@ function SkillsContainer(position) {
           <p className="skill-tab">HTML5</p>
           <p className="skill-tab">CSS3</p>
           <p className="skill-tab">Bootstrap</p>
+          <p className="skill-tab">Figma</p>
         </div>
         <div className="flex-r">
           <p className="skill-tab">Next JS</p>
@@ -262,7 +267,7 @@ function SkillsContainer(position) {
           <p className="skill-tab">Python</p>
         </div>
         <div className="flex-r">
-          <p className="skill-tab">Severless - Google Cloud Platform</p>
+          <p className="skill-tab">Serverless - Google Cloud Platform</p>
         </div>
         <div className="flex-r">
           <p className="skill-tab">Postman</p>

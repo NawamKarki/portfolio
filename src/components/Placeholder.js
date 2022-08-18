@@ -36,8 +36,7 @@ export default function Placeholder() {
       <Suspense fallback={<Preloader />}>
         <Stage />
         <Noodles />
-        {/* <Html>Test to see what happends</Html> */}
-        {/* <Caption>{`Hello\n\nI am Nawam Karki\n\na Full Stack Engineer`}</Caption> */}
+
         <Caption text={text.intro} position={[-2, 1.5, 0]} size="60" />
         <Caption text={text.title} position={[-1.32, 1.2, 0]} size="100" />
         <Caption text={text.description} position={[-1, 0.7, 0]} size="90" />
@@ -92,6 +91,15 @@ export default function Placeholder() {
             url="https://youtu.be/cIjqZWCwfZg"
           />
         </mesh>
+        {/* {showPopup ? (
+          <mesh position={[1, 1.5, 0]}>
+            <Html className="germs">
+              <p>Hover over the germs and sanitise my screen!!!!</p>
+            </Html>
+          </mesh>
+        ) : (
+          ""
+        )} */}
         <Button
           small={false}
           position={[1.1, -0.8, 1]}
@@ -237,9 +245,41 @@ function Skill({ children, position }) {
 function SkillsContainer(position) {
   return (
     <mesh position={[-2.42, -0.55, 1]}>
-      <Skill children="HTML5 | CSS3 | Bootstrap" position={[0.5, 0, 1]} />
+      <Html className="flex skills">
+        <div className="flex-r">
+          <p className="skill-tab">HTML5</p>
+          <p className="skill-tab">CSS3</p>
+          <p className="skill-tab">Bootstrap</p>
+        </div>
+        <div className="flex-r">
+          <p className="skill-tab">Next JS</p>
+          <p className="skill-tab">React JS</p>
+          <p className="skill-tab">Vue JS</p>
+          <p className="skill-tab">Three JS</p>
+        </div>
+        <div className="flex-r">
+          <p className="skill-tab">Nodejs</p>
+          <p className="skill-tab">Python</p>
+          <p className="skill-tab">Vue JS</p>
+          <p className="skill-tab">Three JS</p>
+        </div>
+        <div className="flex-r">
+          <p className="skill-tab">Severless - Google Cloud Platform</p>
+        </div>
+        <div className="flex-r">
+          <p className="skill-tab">Postman</p>
+          <p className="skill-tab">Github</p>
+          <p className="skill-tab">GitLab</p>
+        </div>
+        <div className="flex-r">
+          <p className="skill-tab">Webflow</p>
+          <p className="skill-tab">Wordpress</p>
+          <p className="skill-tab">Unity</p>
+        </div>
+      </Html>
+      {/* <Skill children="HTML5 | CSS3 | Bootstrap" position={[0.5, 0, 1]} />
       <Skill
-        children="Javascript | jQuery | React JS | Vue JS | Three JS"
+        children="Javascript | Next JS | React JS | Vue JS | Three JS"
         position={[0.95, -0.1, 1]}
       />
       <Skill children="Nodejs | Python" position={[0.36, -0.2, 1]} />
@@ -248,7 +288,7 @@ function SkillsContainer(position) {
         position={[0.7, -0.3, 1]}
       />
       <Skill children="Postman | Github | GitLab" position={[0.52, -0.4, 1]} />
-      <Skill children="Webflow | Wordpress" position={[0.5, -0.5, 1]} />
+      <Skill children="Webflow | Wordpress" position={[0.5, -0.5, 1]} /> */}
     </mesh>
   );
 }

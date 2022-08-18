@@ -5,8 +5,11 @@ export default function Preloader() {
   return (
     <>
       {/* <Image url={"/icon.svg"} /> */}
-      <Html>
-        <h1>Loading</h1>
+      <Html className="preloader">
+        <h1>
+          IMPORTANT!!! <br />
+          This site is a work in progress
+        </h1>
       </Html>
     </>
   );

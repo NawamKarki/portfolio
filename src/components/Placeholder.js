@@ -260,8 +260,6 @@ function SkillsContainer(position) {
         <div className="flex-r">
           <p className="skill-tab">Nodejs</p>
           <p className="skill-tab">Python</p>
-          <p className="skill-tab">Vue JS</p>
-          <p className="skill-tab">Three JS</p>
         </div>
         <div className="flex-r">
           <p className="skill-tab">Severless - Google Cloud Platform</p>
@@ -277,18 +275,7 @@ function SkillsContainer(position) {
           <p className="skill-tab">Unity</p>
         </div>
       </Html>
-      {/* <Skill children="HTML5 | CSS3 | Bootstrap" position={[0.5, 0, 1]} />
-      <Skill
-        children="Javascript | Next JS | React JS | Vue JS | Three JS"
-        position={[0.95, -0.1, 1]}
-      />
-      <Skill children="Nodejs | Python" position={[0.36, -0.2, 1]} />
-      <Skill
-        children="Severless - Google Cloud Platform"
-        position={[0.7, -0.3, 1]}
-      />
-      <Skill children="Postman | Github | GitLab" position={[0.52, -0.4, 1]} />
-      <Skill children="Webflow | Wordpress" position={[0.5, -0.5, 1]} /> */}
+      \
     </mesh>
   );
 }
